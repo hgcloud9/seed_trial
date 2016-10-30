@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1 style="color:blue;">To members of the Darlington Orchestra Committee<h1>
+    <h3>Hi  <%=@user.name%>,</h3>
+    <p>
+      <%=DateTime.now.to_date%>
+    </p>
+    <p>
+      Originator: <span style="color: green; font:bold"><%=@originator%></span>
+      Title: <span style="color: green; font:bold"> <%= @proposal %></span>
+    </p>
+    <p>
+      <%=@originator%> has initiated a  <span style="color: red; font:bold"> New Topic </span> on the
+      committee web-site  for your consideration.
+      <a href="https://howd-gilb.herokuapp.com"> Click here </a> to go to the site.
+      You can log in with your e-address(the one this mail came to) and use the
+       instrument Sarah plays(start with capital) as a password(unless you have
+       already changed one or both on the site).  Please vote even if you don't
+       have a comment so it can be seen who has looked at the proposal(there are
+        non-commital vote options).
+    </p>
+    <p>
+      The 'help' page should give you all the info you need.  <span style="color: red;">
+        Please give this new site/app a try</span>
+    </p>
+    <p>
+      Sorry to warn you, this web site can be rather slow in the evening.
+    <p>
+      If you have problems/worries or can think of changes that would be good
+      (can't promise I can code them) <a href="mailto:howard.gilbrt@gmail.com">Please contact me</a>.
+    </p>
+    <h3> Best wishes from the web-site</h3>
+
+  </body>
+</html>

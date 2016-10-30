@@ -1,0 +1,56 @@
+<h1>Listing Proposals</h1>
+<%= link_to 'Submit New Proposal', new_topic_path %>
+<style>
+table, th, td {
+    border: 1px solid black;
+}th, td {
+    padding: 5px;
+}
+</style>
+
+<%if !current_user.admin%>
+
+  <table style= "width:80%; margin:auto;">
+  <tr>
+    <th>Name</th>
+    <th>Title</th>
+    <th>Proposal</th>
+    <th colspan="3"></th>
+  </tr>
+
+  <% @topics.each do |topic| %>
+    <tr>
+      <td style="vertical-align:text-top;"><%= topic.name %></td>
+      <td style="vertical-align:text-top;"><%= topic.title %></td>
+      <td><%= topic.proposal %></td>
+      <td style="vertical-align:text-top;"><%= link_to 'Show', topic_path(topic) %></td>
+      <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
+
+    </tr>
+    <%end%>
+  </table>
+  <%else%>
+
+    <table style= "width:80%; margin:auto;">
+    <tr>
+      <th>Name</th>
+      <th>Title</th>
+      <th>Proposal</th>
+      <th colspan="3"></th>
+    </tr>
+
+    <% @topics.each do |topic| %>
+    <tr>
+      <td style="vertical-align:text-top;"><%= topic.name %></td>
+      <td style="vertical-align:text-top;"><%= topic.title %></td>
+      <td><%= topic.proposal %></td>
+      <td style="vertical-align:text-top;"><%= link_to 'Show', topic_path(topic) %></td>
+      <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
+      <td><%= link_to 'Destroy', topic_path(topic),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+
+    </tr>
+  <%end%>
+   </table>
+<%end%>

@@ -1,0 +1,25 @@
+
+<%= form_for([@topic, @topic.comments.build]) do |f| %>
+<p>
+  <%= f.label :commenter %><br>
+  <%= f.text_field :commenter, :value => current_user.name  %>
+</p>
+<p>
+  <%= f.label :body %><br>
+  <%= f.text_area :body %>
+<div style='width: 200px; margin: auto; margin: auto'><%= f.submit "Submit Comment", class: "btn btn-primary btn-lg" %></div>
+</p>
+<%end%>
+<p> After submitting comments the comment will move to "Comments so far"
+   the form will remain on screen, ignore it and go on to voting (below).</p>
+<p>
+  <h1 style="color:red;"> Register your vote </h1>
+<p>  Please select one of "For Against Undecided N/a"
+  by clicking it in the dropdown list below. </p>
+
+ <%= form_for @topic do |t| %>
+    <div style='width: 400px; margin: auto'><%=t.label :"#{current_user.name}_vote".to_sym%></div>
+    <div style='width: 400px; margin: auto'><%= t.select  "#{current_user.name}_vote".to_sym, options_for_select(@votes) %></div>
+    <div style='width: 200px; margin: auto'><%= t.submit "Submit Vote", class: "btn btn-primary btn-lg"%></div>
+  </p>
+<%end%>

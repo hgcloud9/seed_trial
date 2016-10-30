@@ -1,0 +1,6 @@
+
+<select name=#{current_user.name}_vote">
+      <%= @votes.each do |vote| %>
+        <option value="<%= vote %>"><%= vote %></option>
+      <% end %>
+    </select>
