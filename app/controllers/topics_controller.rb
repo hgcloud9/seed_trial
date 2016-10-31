@@ -25,6 +25,7 @@ class TopicsController < ApplicationController
 
   def edit
     @topic = Topic.find(params[:id])
+    @votes=["Not Voted", "For", "Against", "Undecided", "N/a" ]
   end
 
    def create
