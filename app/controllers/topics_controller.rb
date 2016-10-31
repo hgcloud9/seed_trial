@@ -9,7 +9,7 @@ class TopicsController < ApplicationController
    end
 
    def index
-    @topics = Topic.all
+    @topics = Topic.all.sort_by {|obj| obj.created_at }.reverse
     @votes=["Not Voted", "For", "Against", "Undecided", "N/a" ]
   end
 

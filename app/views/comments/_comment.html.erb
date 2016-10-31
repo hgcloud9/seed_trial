@@ -4,6 +4,11 @@
 </p>
 
 <p>
+  <strong>Date:</strong>
+  <%= comment.created_at.strftime("%d:%m:%Y") %>
+</p>
+
+<p>
   <strong>Comment:</strong>
   <%= comment.body %>
 </p>
